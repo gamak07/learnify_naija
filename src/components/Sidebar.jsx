@@ -47,7 +47,7 @@ const Sidebar = ({ collapseSidebar }) => {
 
   return (
     <div
-      className={`transition-all duration-300 ease-in-out h-screen bg-indigo-700 ${
+      className={`transition-all duration-300 ease-in-out max-h-screen overflow-y-auto bg-indigo-700 ${
         collapseSidebar ? "w-20" : "w-64"
       }`}
     >

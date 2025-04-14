@@ -9,9 +9,9 @@ const AppLayout = () => {
     setCollapseSidebar((prev) => !prev);
   };
   return (
-    <div className="flex w-full">
+    <div className="flex w-full bg-gray-50">
       <Sidebar collapseSidebar={collapseSidebar} />
-      <div className="flex-1">
+      <div className="flex-1 max-h-screen overflow-y-auto">
         <Header
           collapseSidebar={collapseSidebar}
           handleCollapseSidebar={handleCollapseSidebar}
