@@ -7,6 +7,7 @@ import {
   MdOutlineKeyboardArrowDown,
   MdOutlineKeyboardArrowUp,
 } from "react-icons/md";
+import AccountSettingsDropDown from "./AccountSettingsDropDown";
 
 const Header = ({ collapseSidebar, handleCollapseSidebar }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,18 +41,26 @@ const Header = ({ collapseSidebar, handleCollapseSidebar }) => {
         <Button className="text-2xl">
           <AiFillMessage />
         </Button>
-        <div className="flex items-center gap-2">
-          <div className="flex items-center justify-center h-10 w-10 text-white text-xl bg-indigo-500 rounded-full font-bold">
-            GM
+        <div
+          className="relative z-40 cursor-pointer"
+          onClick={handleOpenDropdown}
+        >
+          <div className="flex items-center gap-2">
+            <div className="flex items-center justify-center h-10 w-10 text-white text-xl bg-indigo-500 rounded-full font-bold">
+              GM
+            </div>
+            <p>Admin</p>
+            <span className="text-xl" onClick={handleOpenDropdown}>
+              {isOpen ? (
+                <MdOutlineKeyboardArrowUp />
+              ) : (
+                <MdOutlineKeyboardArrowDown />
+              )}
+            </span>
           </div>
-          <p>Admin</p>
-          <span className="text-xl" onClick={handleOpenDropdown}>
-            {isOpen ? (
-              <MdOutlineKeyboardArrowUp />
-            ) : (
-              <MdOutlineKeyboardArrowDown />
-            )}
-          </span>
+          {isOpen && (
+            <AccountSettingsDropDown onClose={() => setIsOpen(false)} />
+          )}
         </div>
       </div>
     </div>

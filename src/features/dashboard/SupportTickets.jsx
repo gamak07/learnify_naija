@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import Button from "../../components/Button";
+import TicketRespond from "./TicketRespond";
 
 const tickets = [
   {
@@ -34,6 +36,15 @@ const badgeColors = {
 };
 
 const SupportTickets = () => {
+  const [openModal, setOpenModal] = useState(false);
+  const [type, setType] = useState(null);
+  const [user, setUser] = useState(null);
+
+  const handleOpenModal = (type, user) => {
+    setOpenModal((prev) => !prev);
+    setType(type);
+    setUser(user);
+  };
   return (
     <div className="bg-white p-6 rounded-lg shadow-sm">
       <div className="flex justify-between items-center mb-4">
@@ -56,24 +67,38 @@ const SupportTickets = () => {
               </p>
               <div className="flex gap-2 mt-1 text-xs font-medium">
                 <span
-                  className={`px-2 py-0.5 rounded-full ${badgeColors[ticket.priority]}`}
+                  className={`px-2 py-0.5 rounded-full ${
+                    badgeColors[ticket.priority]
+                  }`}
                 >
                   {ticket.priority}
                 </span>
                 <span
-                  className={`px-2 py-0.5 rounded-full ${badgeColors[ticket.status]}`}
+                  className={`px-2 py-0.5 rounded-full ${
+                    badgeColors[ticket.status]
+                  }`}
                 >
                   {ticket.status}
                 </span>
               </div>
             </div>
 
-            <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-1 rounded-md text-sm">
+            <Button
+              className="bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-1 rounded-md text-sm"
+              onClick={() => handleOpenModal(ticket.type, ticket.user)}
+            >
               Respond
-            </button>
+            </Button>
           </div>
         ))}
       </div>
+      {openModal && (
+        <TicketRespond
+          type={type}
+          user={user}
+          onClose={() => setOpenModal(false)}
+        />
+      )}
     </div>
   );
 };

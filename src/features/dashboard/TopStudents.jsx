@@ -1,38 +1,38 @@
 import React from "react";
+const topPerformers = [
+  {
+    pic: "/images/aisha.jpg",
+    name: "Aisha Mohammad",
+    subject: "Mathematics",
+    score: 98,
+  },
+  {
+    pic: "/images/chinedu.jpg",
+    name: "Chinedu Okonkwo",
+    subject: "Physics",
+    score: 96,
+  },
+  {
+    pic: "/images/ngozi.jpg",
+    name: "Ngozi Adeyemi",
+    subject: "Biology",
+    score: 95,
+  },
+  {
+    pic: "/images/oluwaseun.jpg",
+    name: "Oluwaseun Adeleke",
+    subject: "Chemistry",
+    score: 94,
+  },
+  {
+    pic: "/images/fatima.jpg",
+    name: "Fatima Ibrahim",
+    subject: "English",
+    score: 93,
+  },
+];
 
 const TopStudents = () => {
-  const topPerformers = [
-    {
-      pic: "/images/aisha.jpg",
-      name: "Aisha Mohammad",
-      subject: "Mathematics",
-      score: 98,
-    },
-    {
-      pic: "/images/chinedu.jpg",
-      name: "Chinedu Okonkwo",
-      subject: "Physics",
-      score: 96,
-    },
-    {
-      pic: "/images/ngozi.jpg",
-      name: "Ngozi Adeyemi",
-      subject: "Biology",
-      score: 95,
-    },
-    {
-      pic: "/images/oluwaseun.jpg",
-      name: "Oluwaseun Adeleke",
-      subject: "Chemistry",
-      score: 94,
-    },
-    {
-      pic: "/images/fatima.jpg",
-      name: "Fatima Ibrahim",
-      subject: "English",
-      score: 93,
-    },
-  ];
   return (
     <div className="bg-white rounded-lg shadow-md p-6">
       <h1 className="text-lg font-semibold mb-4">Top Performing Students</h1>
