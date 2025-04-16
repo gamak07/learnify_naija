@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import AppLayout from "./components/AppLayout";
 import Dashboard from "./pages/Dashboard";
+import UserManagement from "./pages/UserManagement";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Routes>
         <Route element={<AppLayout />}>
           <Route index element={<Dashboard />} path="/" />
+          <Route element={<UserManagement />} path="/user_management" />
         </Route>
       </Routes>
     </BrowserRouter>
