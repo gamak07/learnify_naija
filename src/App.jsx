@@ -3,6 +3,7 @@ import "./App.css";
 import AppLayout from "./components/AppLayout";
 import Dashboard from "./pages/Dashboard";
 import UserManagement from "./pages/UserManagement";
+import ContentManagement from "./pages/ContentManagement";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route element={<AppLayout />}>
           <Route index element={<Dashboard />} path="/" />
           <Route element={<UserManagement />} path="/user_management" />
+          <Route element={<ContentManagement />} path="/content_management" />
         </Route>
       </Routes>
     </BrowserRouter>
