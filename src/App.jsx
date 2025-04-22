@@ -4,6 +4,7 @@ import AppLayout from "./components/AppLayout";
 import Dashboard from "./pages/Dashboard";
 import UserManagement from "./pages/UserManagement";
 import ContentManagement from "./pages/ContentManagement";
+import Notifications from "./pages/Notifications";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route index element={<Dashboard />} path="/" />
           <Route element={<UserManagement />} path="/user_management" />
           <Route element={<ContentManagement />} path="/content_management" />
+          <Route element={<Notifications />} path="/notifications" />
         </Route>
       </Routes>
     </BrowserRouter>
