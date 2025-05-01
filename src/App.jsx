@@ -5,6 +5,8 @@ import Dashboard from "./pages/Dashboard";
 import UserManagement from "./pages/UserManagement";
 import ContentManagement from "./pages/ContentManagement";
 import Notifications from "./pages/Notifications";
+import { NotificationDetails } from "./pages/NotificationDetails";
+import NotificationView from "./pages/NotificationView";
 
 function App() {
   return (
@@ -15,7 +17,9 @@ function App() {
           <Route element={<UserManagement />} path="/user_management" />
           <Route element={<ContentManagement />} path="/content_management" />
           <Route element={<Notifications />} path="/notifications" />
+          <Route element={<NotificationView />} path="/notification/001" />
         </Route>
+        <Route element={<NotificationDetails />} path="/notification_details" />
       </Routes>
     </BrowserRouter>
   );

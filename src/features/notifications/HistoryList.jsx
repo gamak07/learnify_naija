@@ -12,6 +12,7 @@ import {
   FaTrashAlt,
   FaDownload,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const iconMap = {
   Email: <FaEnvelope className="text-gray-600" />,
@@ -36,9 +37,9 @@ const HistoryList = ({
   status,
   metrics,
   showMenu,
-  setShowMenu
+  setShowMenu,
 }) => {
-  const isOpen = showMenu === id
+  const isOpen = showMenu === id;
   return (
     <tr className="hover:bg-gray-50">
       <td className="px-4 py-4 text-sm text-gray-700 whitespace-nowrap">
@@ -81,12 +82,15 @@ const HistoryList = ({
         </button>
         {showMenu === id && (
           <ul className="absolute z-50 w-48 right-13 rounded-md shadow-lg bg-white py-1">
-            <li className="w-full font-semibold text-left px-4 py-2 text-sm text-gray-700 flex items-center hover:bg-gray-100">
+            <Link
+              to="/notification/001"
+              className="w-full font-semibold text-left px-4 py-2 text-sm text-gray-700 flex items-center hover:bg-gray-100"
+            >
               <span className="mr-3">
                 <FaEye />
               </span>
               View Details
-            </li>
+            </Link>
             <li className="w-full font-semibold text-left px-4 py-2 text-sm text-gray-700 flex items-center hover:bg-gray-100">
               <span className="mr-3">
                 <FaEdit />
