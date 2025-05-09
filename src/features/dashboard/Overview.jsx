@@ -44,8 +44,13 @@ const Overview = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 space-x-4 mt-6">
         {stats.map((stat, i) => (
-          <div key={i} className=" bg-white rounded-lg shadow-sm p-6 flex items-center gap-2.5">
-            <div className={`w-12 h-12 flex items-center justify-center rounded-full text-white ${stat.bgColor}`}>
+          <div
+            key={i}
+            className=" bg-white rounded-lg shadow-sm p-6 flex items-center gap-2.5"
+          >
+            <div
+              className={`w-12 h-12 flex items-center justify-center rounded-full text-white ${stat.bgColor}`}
+            >
               {stat.icon}
             </div>
             <div>

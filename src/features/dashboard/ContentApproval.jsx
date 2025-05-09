@@ -4,11 +4,14 @@ import useClickHandler from "../../hooks/useClick";
 
 const ContentApproval = ({ action, onClose }) => {
   const actionType = action === "approve" ? "Approval" : "Rejection";
-  const modalRef = useRef(null)
+  const modalRef = useRef(null);
 
-  useClickHandler(modalRef, onClose)
+  useClickHandler(modalRef, onClose);
   return (
-    <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] bg-white rounded-lg shadow-xl p-6" ref={modalRef}>
+    <div
+      className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] bg-white rounded-lg shadow-xl p-6"
+      ref={modalRef}
+    >
       <h1 className="text-lg font-semibold mb-4">Confirm {actionType}</h1>
       <p className="mb-6">Are you sure you want to approve this content?</p>
       <div className="flex justify-end space-x-3">

@@ -7,6 +7,7 @@ import ContentManagement from "./pages/ContentManagement";
 import Notifications from "./pages/Notifications";
 import { NotificationDetails } from "./pages/NotificationDetails";
 import NotificationView from "./pages/NotificationView";
+import SupportCenter from "./pages/SupportCenter";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route element={<ContentManagement />} path="/content_management" />
           <Route element={<Notifications />} path="/notifications" />
           <Route element={<NotificationView />} path="/notification/001" />
+          <Route element={<SupportCenter />} path="/support_center" />
         </Route>
         <Route element={<NotificationDetails />} path="/notification_details" />
       </Routes>
