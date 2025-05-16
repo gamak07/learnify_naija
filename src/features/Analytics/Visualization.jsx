@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
+import VisualizationHeader from "./VisualizationHeader";
+import UserActivityChart from "./UserActivityChart";
+import ContentEngagementChart from "./ContentEngagementChart";
+import LearningProgress from "./LearningProgress";
+import AssessmentPerformance from "./AssessmentPerformance";
 
 const Visualization = () => {
+  const [activeTab, setActiveTab] = useState("daily");
+  const handleActiveTab = (tab) => {
+    setActiveTab(tab);
+  };
   return (
     <div className="bg-white shadow rounded-lg p-4 mb-8">
-      <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-medium text-gray-900">Data Visualization</h3>
+      <VisualizationHeader
+        activeTab={activeTab}
+        handleActiveTab={handleActiveTab}
+      />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <UserActivityChart />
+        <ContentEngagementChart />
+        <LearningProgress />
+        <AssessmentPerformance />
       </div>
-      <div className="grid grid-cols-1 md-grid-cols-2 gap-6"></div>
     </div>
   );
 };
