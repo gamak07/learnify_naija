@@ -8,6 +8,7 @@ const AnalyticsOptions = () => {
   const handleActiveTab = (tab) => {
     setActiveTab(tab);
   };
+
   return (
     <div className="bg-white shadow rounded-lg p-4 mb-8">
       <AnalyticsOptionHeader
@@ -15,7 +16,7 @@ const AnalyticsOptions = () => {
         handleActiveTab={handleActiveTab}
       />
       <AnalyticsMiniHeader />
-      <AnalyticsTable />
+      <AnalyticsTable activeTab={activeTab} />
       <div></div>
     </div>
   );

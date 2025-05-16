@@ -1,45 +1,44 @@
 import React from "react";
-import UserAnalyticsList from "./UserAnalyticsList";
+import ContentAnalyticsList from "./ContentAnalyticsList";
 
-const users = [
+const contents = [
   {
-    name: "Moshood Ariyo",
-    email: "moshari34@gmail.com",
-    lastActive: "2025-05-10",
-    sessions: 14,
-    avgDuration: 23,
+    title: "Introduction to Data Science",
+    type: "Video",
+    views: 234,
+    avgEngagement: 80,
+    completionRate: 72,
   },
   {
-    name: "Mark Demilade",
-    email: "markdemilade112@gmail.com",
-    lastActive: "2025-05-11",
-    sessions: 21,
-    avgDuration: 20,
+    title: "Python Programming Basics",
+    type: "Course",
+    views: 1123,
+    avgEngagement: 83,
+    completionRate: 72,
   },
   {
-    name: "Johnson Ogbuewi",
-    email: "johnogbu12@gmail.com",
-    lastActive: "2025-05-12",
-    sessions: 10,
-    avgDuration: 9,
+    title: "Machine Learning Fundamentals",
+    type: "Article",
+    views: 100,
+    avgEngagement: 85,
+    completionRate: 75,
   },
   {
-    name: "Ridwan Adam",
-    email: "ridtech11@gmail.com",
-    lastActive: "2025-05-13",
-    sessions: 6,
-    avgDuration: 14,
+    title: "Data Visualization Techniques",
+    type: "Quiz",
+    views: 239,
+    avgEngagement: 89,
+    completionRate: 70,
   },
   {
-    name: "Balikis Arogundade",
-    email: "balikisgundade34@gmail.com",
-    lastActive: "2025-05-14",
-    sessions: 33,
-    avgDuration: 43,
+    title: "Statistical Analysis Methods",
+    type: "Exercise",
+    views: 134,
+    avgEngagement: 50,
+    completionRate: 22,
   },
 ];
-
-const UserAnalyticsTable = () => {
+const ContentAnalyticsTable = () => {
   return (
     <table className="min-w-full divide-y divide-gray-200">
       <thead className="bg-gray-50">
@@ -48,43 +47,40 @@ const UserAnalyticsTable = () => {
             scope="col"
             className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
           >
-            Name
+            title
           </th>
           <th
             scope="col"
             className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
           >
-            Email
+            type
           </th>
           <th
             scope="col"
             className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
           >
-            Last Active
+            views
           </th>
           <th
             scope="col"
             className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
           >
-            Sessions
+            avg. engagement
           </th>
           <th
             scope="col"
             className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
           >
-            Avg. Duration
+            completion rate
           </th>
-          <th
-            scope="col"
-            className="px-6 py-3"
-          >
+          <th scope="col" className="px-6 py-3">
             {/* Actions */}
           </th>
         </tr>
       </thead>
-      <UserAnalyticsList users={users} />
+      <ContentAnalyticsList contents={contents} />
     </table>
   );
 };
 
-export default UserAnalyticsTable;
+export default ContentAnalyticsTable;

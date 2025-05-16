@@ -1,32 +1,33 @@
 import React from "react";
 import Button from "../../components/Button";
 
-const UserAnalyticsList = ({ users }) => {
+const ContentAnalyticsList = ({ contents }) => {
   return (
     <tbody className="bg-white divide-y divide-gray-200">
-      {users.map((user, i) => (
+      {contents.map((content, i) => (
         <tr key={i} className="hover:bg-gray-50">
           <td className="px-6 py-4 whitespace-nowrap">
-            <div className="flex items-center">
-              <div className="h-8 w-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600">
-                JS
-              </div>
-              <div className="ml-4 text-sm font-medium text-gray-900">
-                {user.name}
-              </div>
+            <div className="text-sm font-medium text-gray-900">
+              {content.title}
             </div>
           </td>
           <td className="px-6 py-4 whitespace-nowrap">
-            <div className="text-sm text-gray-900">{user.email}</div>
+            <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
+              {content.type}
+            </span>
           </td>
           <td className="px-6 py-4 whitespace-nowrap">
-            <div className="text-sm text-gray-900">{user.lastActive}</div>
+            <div className="text-sm text-gray-900">{content.views}</div>
           </td>
           <td className="px-6 py-4 whitespace-nowrap">
-            <div className="text-sm text-gray-900">{user.sessions}</div>
+            <div className="text-sm text-gray-900">
+              {content.avgEngagement}%
+            </div>
           </td>
           <td className="px-6 py-4 whitespace-nowrap">
-            <div className="text-sm text-gray-900">{user.avgDuration}min</div>
+            <div className="text-sm text-gray-900">
+              {content.completionRate}%
+            </div>
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
             <Button className="text-indigo-600 cursor-pointer whitespace-nowrap hover:text-indigo-900">
@@ -39,4 +40,4 @@ const UserAnalyticsList = ({ users }) => {
   );
 };
 
-export default UserAnalyticsList;
+export default ContentAnalyticsList;
