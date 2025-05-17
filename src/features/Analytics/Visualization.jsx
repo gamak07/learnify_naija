@@ -17,10 +17,10 @@ const Visualization = () => {
         handleActiveTab={handleActiveTab}
       />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <UserActivityChart />
-        <ContentEngagementChart />
-        <LearningProgress />
-        <AssessmentPerformance />
+        <UserActivityChart activeTab={activeTab} />
+        <ContentEngagementChart activeTab={activeTab} />
+        <LearningProgress activeTab={activeTab} />
+        <AssessmentPerformance activeTab={activeTab} />
       </div>
     </div>
   );
