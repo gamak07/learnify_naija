@@ -112,7 +112,7 @@ const NotificationSettings = () => {
           <div className="border border-gray-200 rounded-md p-3">
             <div className="flex items-center justify-between mb-3">
               <span className="text-sm font-medium">Custom Rules</span>
-              <Button className="text-blue-600 text-sm cursor-pointer whitespace-nowrap">
+              <Button className="flex items-center text-blue-600 text-sm cursor-pointer whitespace-nowrap">
                 <FaPlus className="mr-1" /> Add Rule
               </Button>
             </div>
