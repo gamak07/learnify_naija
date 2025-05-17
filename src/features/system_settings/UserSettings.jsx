@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaUsers } from "react-icons/fa";
 import Button from "../../components/Button";
 
 const UserSettings = () => {
+  const [toggleRegistration, setToggleRegistration] = useState(true);
+
+  const handleToggleRegistration = () => {
+    setToggleRegistration((prev) => !prev);
+  };
   return (
     <div className="bg-white rounded-lg shadow-sm border border-gray-200">
       <div className="p-5 bg-white">
@@ -20,8 +25,17 @@ const UserSettings = () => {
             <label className="text-sm font-medium text-gray-700">
               Allow User Registration
             </label>
-            <div className="relative inline-flex h-6 w-11 items-center rounded-full transition-colors bg-blue-600">
-              <span className="inline-block h-4 w-4 transform rounded-full transition-transform bg-white translate-x-6"></span>
+            <div
+              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
+                toggleRegistration ? "bg-blue-600" : "bg-gray-300"
+              }`}
+              onClick={handleToggleRegistration}
+            >
+              <span
+                className={`inline-block h-4 w-4 transform rounded-full transition-transform bg-white ${
+                  toggleRegistration ? "translate-x-6" : "translate-x-1"
+                }`}
+              ></span>
             </div>
           </div>
           <p className="text-xs text-gray-500 mt-1">
