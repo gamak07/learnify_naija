@@ -1,5 +1,6 @@
 import React from "react";
 import RolesList from "./RolesList";
+import Pagination from '../../components/Pagination'
 
 const roles = [
   {
@@ -68,6 +69,7 @@ const RolesTable = () => {
         </thead>
         <RolesList roles={roles} />
       </table>
+      <Pagination />
     </div>
   );
 };
