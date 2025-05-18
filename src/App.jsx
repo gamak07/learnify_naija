@@ -10,6 +10,7 @@ import NotificationView from "./pages/NotificationView";
 import SupportCenter from "./pages/SupportCenter";
 import Analytics from "./pages/Analytics";
 import SystemSettings from "./pages/SystemSettings";
+import Roles from "./pages/Roles";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
           <Route element={<SupportCenter />} path="/support_center" />
           <Route element={<Analytics />} path="/analytics" />
           <Route element={<SystemSettings />} path="/system_settings" />
-
+          <Route element={<Roles />} path="/roles_permissions" />
         </Route>
         <Route element={<NotificationDetails />} path="/notification_details" />
       </Routes>
