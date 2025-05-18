@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PermissionsHeader from "./PermissionsHeader";
 import ContentPermissions from "./ContentPermissions";
 import UserPermissions from "./UserPermissions";
@@ -6,7 +6,7 @@ import AnalyticsPermission from "./AnalyticsPermission";
 import SystemPermissions from "./SystemPermissions";
 import PermissionsFooter from "./PermissionsFooter";
 
-const Permissions = () => {
+const Permissions = ({ showPermissions, setShowPermissions }) => {
   return (
     <div className="fixed inset-0 z-50 overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
@@ -14,7 +14,10 @@ const Permissions = () => {
         <section className="absolute inset-y-0 right-0 pl-10 max-w-full flex">
           <div className="relative w-screen max-w-md bg-white">
             <div className="h-full flex flex-col py-6 shadow-xl overflow-y-auto">
-              <PermissionsHeader />
+              <PermissionsHeader
+                showPermissions={showPermissions}
+                setShowPermissions={setShowPermissions}
+              />
               <div className="px-4 flex-1 sm:px-6">
                 <ContentPermissions />
                 <UserPermissions />
