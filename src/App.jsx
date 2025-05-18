@@ -11,6 +11,7 @@ import SupportCenter from "./pages/SupportCenter";
 import Analytics from "./pages/Analytics";
 import SystemSettings from "./pages/SystemSettings";
 import Roles from "./pages/Roles";
+import Feedback from "./pages/Feedback";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route element={<Analytics />} path="/analytics" />
           <Route element={<SystemSettings />} path="/system_settings" />
           <Route element={<Roles />} path="/roles_permissions" />
+          <Route element={<Feedback />} path="/feedback" />
         </Route>
         <Route element={<NotificationDetails />} path="/notification_details" />
       </Routes>
